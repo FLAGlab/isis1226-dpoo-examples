@@ -1,4 +1,4 @@
-package OObasics;
+package relations;
 
 /**
  * Message sending example
@@ -8,31 +8,32 @@ public class Kid {
 	
 	private String name;
 	private int age;
-	private Dog dog;
+	private AbstractPet pet;
 	
 	public Kid(String name, int age) {
 		this.name = name;
 		this.age = age;
-		this.dog = null;
+		this.pet = null;
 	}
 	
-	public void addPet(Dog dog) {
-		this.dog = dog;
+	public void addPet(AbstractPet dog) {
+		this.pet = dog;
 	}
 	
 	public boolean removePet() {
-		this.dog = null;
+		this.pet = null;
 		return true;
 	}
 	
 	public void play() {
-		this.dog.play();
+		this.pet.play();
 	}
 	
 	
 	public static void main(String[] args) {
 		Kid kid = new Kid("bob", 42);
 		Dog dog = new Dog("snowy");
+		Cat cat = new Cat();
 		
 		kid.addPet(dog);
 		
@@ -40,6 +41,8 @@ public class Kid {
 		kid.play();
 		
 		kid.removePet();
-		System.out.println(dog.getTimesPlayed());		
+		System.out.println(dog.getTimesPlayed());
+		//kid.addPet(cat);
+		cat.play();
 	}
 }

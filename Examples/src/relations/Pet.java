@@ -1,24 +1,24 @@
-package OObasics;
+package relations;
 
 /**
- * Message sending example
+ * Inheritance enxample
  * @author ISIS1126
  */
-public class Dog {
+public class Pet {
 	private String name;
 	private int timesPlayed;
 	
-	public Dog(String name) {
+	public Pet(String name) {
 		this.name = name;
 		this.timesPlayed = 0;
 	}
 	
-	public void play() {
-		this.timesPlayed += 1;
-	}
-	
 	public int getTimesPlayed() {
 		return this.timesPlayed;
+	}
+	
+	public void setTimesPlayed(int timesPlayed) {
+		this.timesPlayed = timesPlayed;
 	}
 	
 	public String getName() {
