@@ -1,7 +1,15 @@
-package relations;
+package relations.abstractclasses;
 
-public class Cat implements IDomesticPet {
+/**
+ * Cat class
+ * @author ISIS1126
+ */
+public class Cat extends AbstractPet {
 	
+	protected Cat(String name) {
+		super(name);
+	}
+
 	@Override
 	public String talk() {
 		return "miauw";

@@ -1,4 +1,4 @@
-package relations;
+package relations.abstractclasses;
 
 /**
  * Message sending example
@@ -33,7 +33,7 @@ public class Kid {
 	public static void main(String[] args) {
 		Kid kid = new Kid("bob", 42);
 		Dog dog = new Dog("snowy");
-		Cat cat = new Cat();
+		Cat cat = new Cat("top cat");
 		
 		kid.addPet(dog);
 		
@@ -42,7 +42,7 @@ public class Kid {
 		
 		kid.removePet();
 		System.out.println(dog.getTimesPlayed());
-		//kid.addPet(cat);
+		kid.addPet(cat);
 		cat.play();
 	}
 }

@@ -1,5 +1,9 @@
-package relations;
+package relations.interfaces;
 
+/**
+ * Generic account answering to a class
+ * @author ISIS1126
+ */
 public class Account implements IAccount {
 	private int id;
 	private double balance;
@@ -25,9 +29,12 @@ public class Account implements IAccount {
 		this.balance += amount;
 	}
 	
+	/*
+	 * Default accounts are not authorized to get loans
+	 */
 	@Override
 	public boolean authorizeLoan(double amount) {
-		return this.balance >= amount/2;
+		return false;
 	}
 
 	@Override

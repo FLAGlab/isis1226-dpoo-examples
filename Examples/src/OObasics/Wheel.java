@@ -1,5 +1,9 @@
 package OObasics;
 
+/**
+ * Composed class for a car
+ * @author ISIS1126
+ */
 public class Wheel {
 	//Attributes
 	private int id;

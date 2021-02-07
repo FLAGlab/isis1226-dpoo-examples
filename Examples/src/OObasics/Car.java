@@ -1,5 +1,9 @@
 package OObasics;
 
+/**
+ * Car class example
+ * @author ISIS1126
+ */
 public class Car {
 	//Attributes
 	private Wheel[] wheels;

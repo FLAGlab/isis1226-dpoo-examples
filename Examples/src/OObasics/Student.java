@@ -1,5 +1,9 @@
 package OObasics;
 
+/**
+ * Course example, class member
+ * @author ISIS1126
+ */
 public class Student {
 	//Attributes
 	private String name;

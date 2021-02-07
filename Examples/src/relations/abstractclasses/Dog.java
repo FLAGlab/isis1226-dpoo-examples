@@ -1,7 +1,7 @@
-package relations;
+package relations.abstractclasses;
 
 /**
- * Message sending example
+ * Dog example
  * @author ISIS1126
  */
 public class Dog extends AbstractPet {
