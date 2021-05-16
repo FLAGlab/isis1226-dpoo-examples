@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>JListPrueba.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">gui.mvc</a> &gt; <span class="el_source">JListPrueba.java</span></div><h1>JListPrueba.java</h1><pre class="source lang-java linenums">package gui.mvc;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+import javax.swing.JList;
+
+public class JListPrueba extends JFrame {
+<span class="nc" id="L8">	public JListPrueba() {</span>
+<span class="nc" id="L9">		DefaultListModel&lt;String&gt; modelo = new DefaultListModel&lt;String&gt;();</span>
+<span class="nc" id="L10">		modelo.addElement(&quot;Hola&quot;);</span>
+<span class="nc" id="L11">		modelo.addElement(&quot;nuevo&quot;);</span>
+<span class="nc" id="L12">		modelo.addElement(&quot;mundo&quot;);</span>
+
+<span class="nc" id="L14">		JList&lt;String&gt; lista = new JList&lt;String&gt;(modelo);</span>
+<span class="nc" id="L15">		lista.setCellRenderer(new StringRenderer());</span>
+<span class="nc" id="L16">		add(lista);</span>
+
+<span class="nc" id="L18">		setDefaultCloseOperation(EXIT_ON_CLOSE);</span>
+<span class="nc" id="L19">		pack();</span>
+<span class="nc" id="L20">		setVisible(true);</span>
+<span class="nc" id="L21">	}</span>
+	
+	public static void main(String[] args) {
+<span class="nc" id="L24">		new JListPrueba();</span>
+<span class="nc" id="L25">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

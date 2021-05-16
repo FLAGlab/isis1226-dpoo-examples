@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CalculatorTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">tests</a> &gt; <a href="index.source.html" class="el_package">testing</a> &gt; <span class="el_source">CalculatorTest.java</span></div><h1>CalculatorTest.java</h1><pre class="source lang-java linenums">package testing;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+<span class="nc" id="L11">public class CalculatorTest {</span>
+	private Calculator calculator;
+	
+	@BeforeEach
+	public void setUp() throws Exception {
+<span class="nc" id="L16">		calculator = new Calculator();</span>
+<span class="nc" id="L17">	}</span>
+	
+	@Test
+	@DisplayName(&quot;Simple correct multiplication&quot;)
+	public void testMultiply() {
+<span class="nc" id="L22">		assertEquals(42, calculator.multiply(6, 7), &quot;Simple multiplication works&quot;);</span>
+<span class="nc" id="L23">	}</span>
+	
+	@Test
+	@DisplayName(&quot;Increasing operation&quot;)
+	public void testIncreasing() {
+<span class="nc" id="L28">		int result = calculator.multiply(6, 7);</span>
+<span class="nc" id="L29">		assertAll(&quot;Multiplication Increases&quot;,</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">				() -&gt; assertTrue(6 &lt; result, () -&gt; &quot;all good&quot;),</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">				() -&gt; assertTrue(7 &lt; result, () -&gt; &quot;all good&quot;));</span>
+<span class="nc" id="L32">	}</span>
+	
+	@Test
+	@DisplayName(&quot;Failing test&quot;)
+	public void testError() {
+<span class="nc" id="L37">		assertEquals(false, true, &quot;failure&quot;);</span>
+<span class="nc" id="L38">	}</span>
+	
+	@Test
+	@DisplayName(&quot;Error - Divide by 0&quot;)
+	void whenDivideByZero_thenThrowsException(){
+<span class="nc" id="L43">	    calculator.divide(10, 0);</span>
+<span class="nc" id="L44">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

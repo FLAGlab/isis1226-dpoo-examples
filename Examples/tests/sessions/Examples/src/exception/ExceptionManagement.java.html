@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ExceptionManagement.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">exception</a> &gt; <span class="el_source">ExceptionManagement.java</span></div><h1>ExceptionManagement.java</h1><pre class="source lang-java linenums">package exception;
+
+<span class="nc" id="L3">public class ExceptionManagement {</span>
+	private boolean error;
+	
+	public float divide(int a, int b) {
+<span class="nc bnc" id="L7" title="All 2 branches missed.">	    if(b ==0)</span>
+<span class="nc" id="L8">	        return -1;</span>
+	    else
+<span class="nc" id="L10">	        return a/b;</span>
+	}
+	
+	public float  divideRegistry(int a, int b) {
+<span class="nc bnc" id="L14" title="All 2 branches missed.">	    if(b ==0) {</span>
+<span class="nc" id="L15">	        error = true;</span>
+<span class="nc" id="L16">	        return -1;</span>
+	    } else {
+<span class="nc" id="L18">	        error = false;</span>
+<span class="nc" id="L19">	        return a/b;</span>
+	    }
+	}
+	
+	public float divideEx(int a, int b) throws Exception {
+<span class="nc bnc" id="L24" title="All 2 branches missed.">	    if(b ==0) </span>
+<span class="nc" id="L25">	        throw new Exception(&quot;You cannot divide by 0&quot;);</span>
+	    else 
+<span class="nc" id="L27">	        return a/b;</span>
+	}
+
+	public float doubleDivision(int a, int b) throws Exception {
+<span class="nc" id="L31">	    return divideEx(a,b) / divideEx(b,a);</span>
+	}
+	
+	public void callerMethod(int a, int b) {
+		try {
+<span class="nc" id="L36">			float result = divideEx(a,b);</span>
+<span class="nc" id="L37">			System.out.println(&quot;The result is: &quot; + result);</span>
+<span class="nc" id="L38">		} catch(Exception e) {</span>
+<span class="nc" id="L39">			System.out.println(&quot;There was an error&quot;);</span>
+<span class="nc" id="L40">			System.out.println(e.getMessage());</span>
+<span class="nc" id="L41">			e.printStackTrace();</span>
+		}
+<span class="nc" id="L43">	}</span>
+	
+	
+	public static void main(String[] args) {
+<span class="nc" id="L47">		ExceptionManagement em = new ExceptionManagement();</span>
+<span class="nc" id="L48">		em.callerMethod(5,2);</span>
+<span class="nc" id="L49">		em.callerMethod(8,0);</span>
+<span class="nc" id="L50">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

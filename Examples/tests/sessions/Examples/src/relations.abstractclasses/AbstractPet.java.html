@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AbstractPet.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">relations.abstractclasses</a> &gt; <span class="el_source">AbstractPet.java</span></div><h1>AbstractPet.java</h1><pre class="source lang-java linenums">package relations.abstractclasses;
+
+/**
+ * Abstract class for the pet example
+ * This class implements the behavior of a Pet
+ * @author ISIS1126
+ */
+public abstract class AbstractPet {
+	private String name;
+	private int timesPlayed;
+	
+<span class="nc" id="L12">	protected AbstractPet(String name) {</span>
+<span class="nc" id="L13">		this.name = name;</span>
+<span class="nc" id="L14">		this.timesPlayed = 0;</span>
+<span class="nc" id="L15">	}</span>
+
+	public int getTimesPlayed() {
+<span class="nc" id="L18">		return this.timesPlayed;</span>
+	}
+	
+	public void setTimesPlayed(int timesPlayed) {
+<span class="nc" id="L22">		this.timesPlayed = timesPlayed;</span>
+<span class="nc" id="L23">	}</span>
+	
+	public void play() {
+<span class="nc" id="L26">		this.setTimesPlayed(this.getTimesPlayed() + 1);</span>
+<span class="nc" id="L27">	}</span>
+	
+	public abstract String talk();
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

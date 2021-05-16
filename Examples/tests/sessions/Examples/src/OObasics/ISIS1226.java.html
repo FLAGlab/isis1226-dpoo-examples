@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ISIS1226.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">OObasics</a> &gt; <span class="el_source">ISIS1226.java</span></div><h1>ISIS1226.java</h1><pre class="source lang-java linenums">package OObasics;
+
+import java.util.Date;
+
+public class ISIS1226 {
+	//Attributes
+	private int section;
+	private String lecturer;
+	private Date[] lectures; 
+	private Student[] students;
+	private String[] assignments;
+		
+	//Constructor(s)
+<span class="nc" id="L14">	public ISIS1226(int section, String lecturer, Date[] lectures, int classSize, int numberOfAssignments) {</span>
+<span class="nc" id="L15">		this.section = section;</span>
+<span class="nc" id="L16">		this.lecturer = lecturer;</span>
+<span class="nc" id="L17">		this.lectures = lectures;</span>
+<span class="nc" id="L18">		Student[] students = new Student[classSize];</span>
+<span class="nc bnc" id="L19" title="All 2 branches missed.">		for(int i=0; i&lt;classSize; i++) </span>
+<span class="nc" id="L20">			this.students[i] = new Student(Integer.toString(i), numberOfAssignments);</span>
+<span class="nc" id="L21">		this.students = students;</span>
+<span class="nc" id="L22">		this.assignments = new String[numberOfAssignments];</span>
+<span class="nc" id="L23">	}</span>
+	
+	//Methods
+	public void markAssignment(String assignment, float[] marks) {
+<span class="nc bnc" id="L27" title="All 2 branches missed.">		if(this.checkAssignment(assignment)) </span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">		for(int i=0; i&lt;this.students.length; i++) {</span>
+<span class="nc" id="L29">			Student s = this.students[i];</span>
+<span class="nc" id="L30">			s.addMark(i, marks[i]);</span>
+		}
+<span class="nc" id="L32">	}</span>
+
+	private boolean checkAssignment(String assignment) {
+<span class="nc" id="L35">		boolean found = false;</span>
+<span class="nc bnc" id="L36" title="All 4 branches missed.">		for(int i=0; i&lt;this.assignments.length &amp;&amp; !found; i++) {</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">			if(this.assignments[i].equals(assignment))</span>
+<span class="nc" id="L38">				found = true;</span>
+		}
+<span class="nc" id="L40">		return found;</span>
+	}
+	
+	//main
+	public static void main(String[] args) {
+<span class="nc" id="L45">		Date[] lectures = {new Date(), new Date()};</span>
+<span class="nc" id="L46">		ISIS1226 course = new ISIS1226(2, &quot;Nicolas&quot;, lectures, 12, 16);</span>
+<span class="nc" id="L47">		System.out.println(course.lecturer);</span>
+<span class="nc" id="L48">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

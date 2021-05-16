@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Window.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">Window.java</span></div><h1>Window.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class Window extends JFrame implements ActionListener {
+	private static final long serialVersionUID = -9212399885368612884L;
+
+<span class="nc" id="L16">	public Window() {</span>
+<span class="nc" id="L17">		this.setLayout(new BorderLayout());</span>
+		
+<span class="nc" id="L19">		this.setTitle(&quot;Swing Window&quot;);</span>
+<span class="nc" id="L20">		this.setDefaultCloseOperation(EXIT_ON_CLOSE);</span>
+<span class="nc" id="L21">		this.setSize(400, 350);</span>
+		
+<span class="nc" id="L23">		JLabel left = new JLabel(&quot;Left&quot;);</span>
+<span class="nc" id="L24">		left.setBackground(Color.CYAN);</span>
+<span class="nc" id="L25">		left.setOpaque(true);</span>
+		
+<span class="nc" id="L27">		JLabel center = new JLabel(&quot;Center&quot;);</span>
+<span class="nc" id="L28">		center.setBackground(Color.YELLOW);</span>
+<span class="nc" id="L29">		center.setOpaque(true);</span>
+		
+<span class="nc" id="L31">		JTextField top = new JTextField(&quot;Top&quot;);</span>
+<span class="nc" id="L32">		JButton bottom = new JButton(&quot;Bottom&quot;);</span>
+		
+<span class="nc" id="L34">		this.add(left, BorderLayout.WEST);</span>
+<span class="nc" id="L35">		this.add(center, BorderLayout.CENTER);</span>
+<span class="nc" id="L36">		this.add(top, BorderLayout.NORTH);</span>
+<span class="nc" id="L37">		this.add(bottom, BorderLayout.SOUTH);</span>
+		
+<span class="nc" id="L39">		bottom.addActionListener(this);</span>
+		
+<span class="nc" id="L41">		this.setVisible(true);</span>
+<span class="nc" id="L42">	}</span>
+	
+	public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L45">		System.out.println(e.getActionCommand());</span>
+<span class="nc" id="L46">	}</span>
+	
+	public static void main(String[] args) {
+<span class="nc" id="L49">		new Window();</span>
+<span class="nc" id="L50">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

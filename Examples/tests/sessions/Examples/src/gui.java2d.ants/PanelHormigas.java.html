@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>PanelHormigas.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">gui.java2d.ants</a> &gt; <span class="el_source">PanelHormigas.java</span></div><h1>PanelHormigas.java</h1><pre class="source lang-java linenums">package gui.java2d.ants;
+
+import java.awt.*;
+import java.util.ArrayList;
+import javax.swing.*;
+
+@SuppressWarnings(&quot;serial&quot;)
+public class PanelHormigas extends JPanel {
+<span class="nc" id="L9">	private ArrayList&lt;Hormiga&gt; hormigas = new ArrayList&lt;Hormiga&gt;();</span>
+
+<span class="nc" id="L11">	public PanelHormigas(int cantidad, int ancho, int alto)	{</span>
+<span class="nc bnc" id="L12" title="All 2 branches missed.">		for (int i = 0; i &lt; cantidad; i++)</span>
+<span class="nc" id="L13">			hormigas.add(new Hormiga(ancho, alto));</span>
+<span class="nc" id="L14">	}</span>
+
+	@Override
+	public void paint(Graphics g) {
+<span class="nc" id="L18">		Graphics2D g2d = (Graphics2D) g;</span>
+<span class="nc" id="L19">		g2d.setColor(Color.white);</span>
+<span class="nc" id="L20">		g2d.fillRect(0, 0, getWidth(), getHeight());</span>
+<span class="nc" id="L21">		g2d.setColor(Color.black);</span>
+<span class="nc" id="L22">		g2d.setFont(getFont().deriveFont(9f));</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">		for (Hormiga h : hormigas) {</span>
+<span class="nc" id="L24">			int[] datos = h.darInfo();</span>
+<span class="nc" id="L25">			g2d.fillOval(datos[1] - 1, datos[2] - 1, 3, 3);</span>
+<span class="nc" id="L26">			g2d.fillOval(datos[1] - datos[3] - 1, </span>
+<span class="nc" id="L27">                            datos[2] - datos[4] - 1, 3, 3);</span>
+<span class="nc" id="L28">			g2d.drawString(&quot;&quot; + datos[0], </span>
+<span class="nc" id="L29">                              datos[1] - 2, datos[2] - 2);</span>
+<span class="nc" id="L30">			h.moverHormiga();</span>
+		}
+<span class="nc" id="L32">		SwingUtilities.invokeLater(() -&gt;</span>
+		{
+			try {
+<span class="nc" id="L35">				Thread.sleep(50);</span>
+<span class="nc" id="L36">			} catch (InterruptedException e) {</span>
+<span class="nc" id="L37">				e.printStackTrace();</span>
+			}
+<span class="nc" id="L39">		});</span>
+<span class="nc" id="L40">		repaint();</span>
+<span class="nc" id="L41">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

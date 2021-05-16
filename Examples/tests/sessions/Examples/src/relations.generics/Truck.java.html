@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Truck.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">relations.generics</a> &gt; <span class="el_source">Truck.java</span></div><h1>Truck.java</h1><pre class="source lang-java linenums">package relations.generics;
+
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Generics example. A Truck holding different types of products
+ * @author ISIS1126
+ */
+public class Truck&lt;T extends IProduct&gt; {
+
+	private LinkedList&lt;T&gt; products;
+	
+<span class="nc" id="L15">	public Truck() {</span>
+<span class="nc" id="L16">		this.products = new LinkedList&lt;T&gt;();</span>
+<span class="nc" id="L17">	}</span>
+	
+	public void loadProduct(T product) {
+<span class="nc" id="L20">		this.products.add(product);</span>
+<span class="nc" id="L21">	}</span>
+	
+	public void loadProducts(List&lt;T&gt; products) {
+		//TODO
+<span class="nc" id="L25">	}</span>
+	
+	public T unloadProduct(String productName) {
+<span class="nc bnc" id="L28" title="All 2 branches missed.">		for(T p : this.products) {</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">			if(p.getName().equals(productName)) {</span>
+<span class="nc" id="L30">				this.products.remove(p);</span>
+<span class="nc" id="L31">				return p;</span>
+			}
+		}
+<span class="nc" id="L34">		return null;</span>
+	}
+	
+	public List&lt;T&gt; unloadProducts(String productName) {
+		//TODO
+<span class="nc" id="L39">		return new LinkedList&lt;T&gt;();</span>
+	}
+	
+	public double getMaxTemperature(List&lt;T&gt; products) {
+<span class="nc" id="L43">		double maxTemp = Double.NEGATIVE_INFINITY;</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">		for(T p : products) {</span>
+<span class="nc" id="L45">			maxTemp = Math.max(maxTemp, p.getTemperature());</span>
+		}
+<span class="nc" id="L47">		return maxTemp;</span>
+	}
+
+	public static void main(String[] args) {
+<span class="nc" id="L51">		Truck&lt;FrozenProduct&gt; frozenTruck = new Truck&lt;FrozenProduct&gt;();</span>
+<span class="nc" id="L52">		Truck&lt;CannedProduct&gt; cannedTruck = new Truck&lt;CannedProduct&gt;();</span>
+<span class="nc" id="L53">		CannedProduct can = new CannedProduct(&quot;beans&quot;, 26.0, new Date());</span>
+<span class="nc" id="L54">		FrozenProduct bag = new FrozenProduct(&quot;fries&quot;, 0.0, new Date());</span>
+
+<span class="nc" id="L56">		frozenTruck.loadProduct(bag);</span>
+<span class="nc" id="L57">		cannedTruck.loadProduct(can);</span>
+<span class="nc" id="L58">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>

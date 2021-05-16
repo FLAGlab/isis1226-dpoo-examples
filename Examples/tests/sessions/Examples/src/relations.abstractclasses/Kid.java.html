@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Kid.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">PalindromeTest (1) (May 16, 2021 9:42:22 AM)</a> &gt; <a href="../../index.html" class="el_group">Examples</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">relations.abstractclasses</a> &gt; <span class="el_source">Kid.java</span></div><h1>Kid.java</h1><pre class="source lang-java linenums">package relations.abstractclasses;
+
+/**
+ * Message sending example
+ * @author ISIS1126
+ */
+public class Kid {
+	
+	private String name;
+	private int age;
+	private AbstractPet pet;
+	
+<span class="nc" id="L13">	public Kid(String name, int age) {</span>
+<span class="nc" id="L14">		this.name = name;</span>
+<span class="nc" id="L15">		this.age = age;</span>
+<span class="nc" id="L16">		this.pet = null;</span>
+<span class="nc" id="L17">	}</span>
+	
+	public void addPet(AbstractPet dog) {
+<span class="nc" id="L20">		this.pet = dog;</span>
+<span class="nc" id="L21">	}</span>
+	
+	public boolean removePet() {
+<span class="nc" id="L24">		this.pet = null;</span>
+<span class="nc" id="L25">		return true;</span>
+	}
+	
+	public void play() {
+<span class="nc" id="L29">		this.pet.play();</span>
+<span class="nc" id="L30">	}</span>
+	
+	
+	public static void main(String[] args) {
+<span class="nc" id="L34">		Kid kid = new Kid(&quot;bob&quot;, 42);</span>
+<span class="nc" id="L35">		Dog dog = new Dog(&quot;snowy&quot;);</span>
+<span class="nc" id="L36">		Cat cat = new Cat(&quot;top cat&quot;);</span>
+		
+<span class="nc" id="L38">		kid.addPet(dog);</span>
+		
+<span class="nc" id="L40">		kid.play();</span>
+<span class="nc" id="L41">		kid.play();</span>
+		
+<span class="nc" id="L43">		kid.removePet();</span>
+<span class="nc" id="L44">		System.out.println(dog.getTimesPlayed());</span>
+<span class="nc" id="L45">		kid.addPet(cat);</span>
+<span class="nc" id="L46">		cat.play();</span>
+<span class="nc" id="L47">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>PalindromeTest (1) (May 16, 2021 9:42:22 AM)</div></body></html>
